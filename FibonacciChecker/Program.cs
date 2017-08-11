@@ -7,26 +7,16 @@ namespace FibonacciChecker
 	{
 		static void Main(string[] args)
 		{
-			var arg = args.FirstOrDefault();
-			var result = -1;
-			while (true)
+			for(int i = 10; i <= 40; i++)
 			{
-				Int32.TryParse(arg, out result);
-				if (result != -1)
-				{
-					Console.WriteLine(CalculateFibonacci(result));
-				}
-				else
-				{
-					Console.WriteLine("Failure to parse input value.");
-				}
-				arg = Console.ReadLine();
+				Console.WriteLine(CalculateFibonacci(i));
 			}
+			Console.ReadLine();
 		}
 
 		public static int CalculateFibonacci(int position)
 		{
-			var previousResult = 1;
+			var previousResult = 0;
 			var result = 1;
 			for (var i = 0; i < position; i++)
 			{
